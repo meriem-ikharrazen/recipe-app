@@ -1,0 +1,40 @@
+<input type="text" class="form-control" [(ngModel)]="username" />
+
+<button
+  [disabled]="username === ''"
+  class="btn btn-primary"
+  (click)="onButtonClicked()"
+>
+  Show
+</button>
+
+<p [ngStyle]="{ backgroundColor: getColor() }" *ngIf="isDisplayed; else noName">
+  Name: {{ username }}
+</p>
+
+<ng-template #noName>
+  <p>No name</p>
+</ng-template>
+
+<br />
+
+<input type="text" class="form-control" [(ngModel)]="fruit" />
+<button class="btn btn-primary" (click)="addFruit()">Add a new fruit</button>
+<p
+  *ngFor="let f of fruits"
+  [ngStyle]="{ backgroundColor: 'blue' }"
+  [ngClass]="'whiteColor'"
+>
+  {{ f }}
+</p>
+<hr />
+
+<button class="btn btn-primary" (click)="showDetails()">Show Details</button>
+<p *ngIf="showText === true">Word</p>
+<p
+  *ngFor="let l of lt; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ whiteColor: l >= 4 }"
+>
+  {{ i + 1 }}
+</p>
