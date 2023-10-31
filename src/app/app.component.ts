@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'recipe-app';
-  name = '';
-  status = 'completed';
-  isClicked = 'Button is no clicked!';
-  isDisabled = true;
+  page = '';
 
-  constructor() {
-    setTimeout(() => {
-      this.isDisabled = false;
-    }, 1000);
+  onChangeSelectedMenu(page: string) {
+    this.page = page;
   }
+
+  constructor() {}
 
   ngOnInit(): void {}
 
-  onButtonClicked() {
+  /*onButtonClicked() {
     this.title = 'Button is clicked! And, this is the name ' + this.name;
   }
   onUpdateName(event: Event) {
     this.name = (<HTMLInputElement>event.target).value;
   }
+
+ onIntervalFired(event: number) {
+    console.log(event);
+    event % 2 == 0 ? this.oddNumbers.push(event) : this.evenNumbers.push(event);
+  }*/
 }
