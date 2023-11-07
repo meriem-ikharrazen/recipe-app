@@ -1,29 +1,9 @@
-<app-header (onPageChange)="onChangeSelectedMenu($event)"></app-header>
+<app-header></app-header>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="page === 'Recipes'"></app-recipes>
-      <app-shopping-list *ngIf="page === 'Shopping List'"></app-shopping-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
-
-  <!--<div style="margin: 10px">
-    <app-game-control (intervaFired)="onIntervalFired($event)"></app-game-control>
-    <div><app-odd *ngFor="let i of oddNumbers" [number]="i"></app-odd></div>
-    <div><app-even *ngFor="let j of evenNumbers" [number]="j"></app-even></div>
-  <input class="form-control" type="text" (input)="onUpdateName($event)" />
-  <input class="form-control" type="text" [(ngModel)]="name" />
-  <h1>Name : {{ name }} is {{ status }}</h1>
-  <input class="form-control" type="text" [(ngModel)]="name" />
-  <button
-    class="btn btn-primary"
-    [disabled]="isDisabled"
-    (click)="onButtonClicked()"
-  >
-    click {{ isDisabled }}
-  </button>
-  <p>{{ title }}</p>
-</div>
-<app-exercice></app-exercice>-->
 </div>
